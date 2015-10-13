@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="KbG-Bv-MIX">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
     </dependencies>
@@ -12,7 +12,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" id="QvM-If-gpX">
+                            <view contentMode="scaleToFill" id="QvM-If-gpX" userLabel="TabView">
                                 <rect key="frame" x="0.0" y="524" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
@@ -21,12 +21,18 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" image="home_icon"/>
                                         <state key="selected" image="home_selected_icon"/>
+                                        <connections>
+                                            <action selector="onHomeButton:" destination="KbG-Bv-MIX" eventType="touchUpInside" id="CcF-98-MDa"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Rph-45-rsD" userLabel="SearchButton">
                                         <rect key="frame" x="64" y="0.0" width="64" height="44"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" image="search_icon"/>
                                         <state key="selected" image="search_selected_icon"/>
+                                        <connections>
+                                            <action selector="onSearchButton:" destination="KbG-Bv-MIX" eventType="touchUpInside" id="Yqq-LS-OSL"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="qXf-IM-mYH" userLabel="ComposeButton">
                                         <rect key="frame" x="128" y="0.0" width="64" height="44"/>
@@ -39,19 +45,33 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" image="account_icon"/>
                                         <state key="selected" image="account_selected_icon"/>
+                                        <connections>
+                                            <action selector="onAccountButton:" destination="KbG-Bv-MIX" eventType="touchUpInside" id="faO-DY-hq3"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Wam-Ol-YdB" userLabel="TrendingButton">
                                         <rect key="frame" x="256" y="0.0" width="64" height="44"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" image="trending_icon"/>
                                         <state key="selected" image="trending_selected_icon"/>
+                                        <connections>
+                                            <action selector="onTrendingButton:" destination="KbG-Bv-MIX" eventType="touchUpInside" id="dvA-4e-ptv"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.20784313725490194" green="0.27450980392156865" blue="0.36078431372549019" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
+                            <view clipsSubviews="YES" contentMode="scaleToFill" id="lUF-3K-aI8" userLabel="ContentView">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="524"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="contentView" destination="lUF-3K-aI8" id="5Bc-f0-htP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mvS-jx-UzB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
